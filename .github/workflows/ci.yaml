@@ -78,7 +78,7 @@ jobs:
 
       - name: Update image tag
         run: |
-          sed -i 's|720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:.*|720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:${{ github.sha }}|g' ./deployment/dummy-app/k8s/deployment.yaml
+          sed -i 's|720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:.*|720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:${{ steps.build-image.outputs.IMAGE_TAG }}|g' ./deployment/dummy-app/k8s/deployment.yaml
 
       - name: Commit change to current PR branch
         uses: stefanzweifel/git-auto-commit-action@v5
