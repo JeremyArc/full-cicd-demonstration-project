@@ -4,13 +4,13 @@ FROM node:18-alpine
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json into WORKDIR
-COPY ../package*.json ./
+COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
 # Copy the rest of application code
-COPY . .
+COPY ./dummy-app .
 
 # Expose port 8080
 EXPOSE 8080
