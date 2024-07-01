@@ -56,11 +56,16 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           echo "image-ref: \"$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG\""
+          echo "::set-output name=ECR_REGISTRY::$(ECR_REGISTRY')"
+          echo "::set-output name=ECR_REPOSITORY::$(ECR_REPOSITORY')"
+          echo "::set-output name=IMAGE_TAG::$(IMAGE_TAG')"
 
       - name: Run Trivy vulnerability scanner
         uses: aquasecurity/trivy-action@0.20.0
+        env:
+          IMAGE_REF: ${{ steps.build-image.outputs.ECR_REGISTRY}}/${{ steps.build-image.outputs.ECR_REPOSITORY}}/${{ steps.build-image.outputs.IMAGE_TAG}}
         with:
-          image-ref: "$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          image-ref: $IMAGE_REF
           format: "table"
           exit-code: "1"
           ignore-unfixed: true
