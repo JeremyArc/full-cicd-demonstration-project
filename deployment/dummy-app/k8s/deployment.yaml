@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dummy-app
+  namespace: dummy
+  labels:
+    app: dummy-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dummy-app
+  template:
+    metadata:
+      labels:
+        app: dummy-app
+    spec:
+      containers:
+      - name: dummy-app
+        image: 720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:6866bf2-2024-07-01-13-57
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 9080
+          name: web-port
+          protocol: TCP
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8080
+            scheme: HTTP
+      imagePullSecrets:
+      - name: registry-bookinfo
