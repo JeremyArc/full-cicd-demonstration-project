@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/JeremyArc/full-cicd-demonstration-project.git
     targetRevision: HEAD
-    path: /deployment/dummy-app/k8s
+    path: deployment/dummy-app/k8s
   destination:
     server: https://kubernetes.default.svc
     namespace: dummy
