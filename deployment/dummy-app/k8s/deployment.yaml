@@ -34,4 +34,4 @@ spec:
             port: 8080
             scheme: HTTP
       imagePullSecrets:
-      - name: registry-bookinfo
+      - name: jessada-full-cicd
