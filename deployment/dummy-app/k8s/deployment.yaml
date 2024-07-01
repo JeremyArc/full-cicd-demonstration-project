@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: dummy-app
-        image: 720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:8ea876260029ee2be03273c6864392d3325404df
+        image: 720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:3fd9d0a-2024-07-01-15-54
         imagePullPolicy: Always
         ports:
         - containerPort: 9080
