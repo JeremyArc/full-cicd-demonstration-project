@@ -1,0 +1,27 @@
+{
+  "name": "full-cicd-demonstration-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./dummy-app/app.js",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremyArc/full-cicd-demonstration-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JeremyArc/full-cicd-demonstration-project/issues"
+  },
+  "homepage": "https://github.com/JeremyArc/full-cicd-demonstration-project#readme",
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
