@@ -75,3 +75,13 @@ jobs:
         id: push-image
         run: |
           docker push "${{ steps.build-image.outputs.ECR_REGISTRY }}/${{ steps.build-image.outputs.ECR_REPOSITORY }}:${{ steps.build-image.outputs.IMAGE_TAG }}"
+
+      - name: Update image tag
+        run: |
+          sed -i 's|720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:.*|720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:${{ github.sha }}|g' ./deployment/dummy-app/k8s/deployment.yaml
+
+      - name: Commit change to current PR branch
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Automated image tag update
+          file_pattern: "*.yaml"
