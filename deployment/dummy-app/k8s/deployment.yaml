@@ -20,7 +20,7 @@ spec:
         image: 720133173047.dkr.ecr.ap-southeast-1.amazonaws.com/jessada-full-cicd:3fd9d0a-2024-07-01-15-54
         imagePullPolicy: Always
         ports:
-        - containerPort: 9080
+        - containerPort: 8080
           name: web-port
           protocol: TCP
         livenessProbe:
