@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-notifications-cm
+  namespace: argocd
+data:
+  service.googlechat: |
+    webhooks:
+      spaceName: $space-webhook-url
+  template.app-sync-succeeded: |
+    message: The app {{ .app.metadata.name }} has successfully synced!
+  template.app-deployed: |
+    message: The app {{ .app.metadata.name }} is deployed!
