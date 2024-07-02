@@ -5,7 +5,7 @@ metadata:
   namespace: argocd
   annotations:
     notifications.argoproj.io/subscribe.on-sync-succeeded.googlechat: spaceName
-    notifications.argoproj.io/subscribe.on-deployed.googlechat: spaceName
+    notifications.argoproj.io/subscribe.on-deploy-succeeded.googlechat: spaceName
 spec:
   project: default
   source:
