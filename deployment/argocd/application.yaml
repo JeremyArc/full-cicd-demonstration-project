@@ -3,6 +3,9 @@ kind: Application
 metadata:
   name: myapp-argo-application
   namespace: argocd
+  annotations:
+    notifications.argoproj.io/subscribe.on-sync-succeeded.googlechat: spaceName
+    notifications.argoproj.io/subscribe.on-deployed.googlechat: spaceName
 spec:
   project: default
   source:
