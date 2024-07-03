@@ -28,7 +28,7 @@ Additionally, you need an AWS account with the necessary permissions to create a
 This repository sets up the following architecture:
 
 - Github Actions: For continuous integration and automation.
-- [Trivy](https://github.com/aquasecurity/trivy-action): for scan software vulnerability.
+- [Trivy](https://github.com/aquasecurity/trivy-action): For scan software vulnerability.
 - [git-auto-commit-action](https://github.com/stefanzweifel/git-auto-commit-action): For github bot commit changes after update the image in manifest file after push image to ECR.
 - Kubernetes (EKS): For deploying and managing containerized applications.
 - Helm: For managing Kubernetes applications.
