@@ -8,6 +8,7 @@ This repository demonstrates a complete CI/CD pipeline setup using Github Action
 - Architecture
 - Preparation
 - Implementation
+- Clear resources
 
 # Prerequisites
 
@@ -167,3 +168,11 @@ kubectl apply -f ./deployment/argocd/ -n argocd
 ## Step 12: Create Github Webhook for ArgoCD application that allow ArgoCD immediately apply a manifest file as soon as it changed.
 
 [How to setup Github Webhook to ArgoCD application Docs](https://argo-cd.readthedocs.io/en/stable/operator-manual/webhook/)
+
+# Clear resources
+
+If you need to remove all the resource, use this command 
+
+```bash
+eksctl delete cluster --name dummy-cluster --region ap-southeast-1
+```
