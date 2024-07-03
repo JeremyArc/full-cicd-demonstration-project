@@ -42,7 +42,7 @@ This repository sets up the following architecture:
 
 ## Step 2: Store AWS credential and ECR repository name within in this Github repository to allow Github Action to able to push image to ECR repository
 
-- REPO_NAME: <aws-account-id>.dkr.ecr.<region>.amazonaws.com/<registry-name>
+- REPO_NAME: {aws-account-id}.dkr.ecr.{region}.amazonaws.com/{registry-name}
 - AWS_ACCESS_KEY_ID:
 - AWS_SECRET_ACCESS_KEY:
 
