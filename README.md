@@ -135,24 +135,19 @@ By default, the Argo CD API server is not exposed with an external IP.
 ```bash
 kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "LoadBalancer"}}'
 ```
-
-## Step 8: Forward ArgoCD port
-
-Kubectl port-forwarding can also be used to connect to the API server without exposing the service.
+Or you can forward port and access it via localhost:8080 
 
 ```bash
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-Remark: If the terminal still in process on port forwarding, you can press `Ctrl` + `c`
-
-## Step 9: Login to ArgoCD UI using load balancer's DNS
+## Step 8: Login to ArgoCD UI using load balancer's DNS
 
 - user: `admin`
 - password: use this command to get default admin's password `argocd admin initial-password -n argocd`
 - Remark: You should change password and delete this credential after the first login.
 
-## Step 10: Apply ArgoCD application
+## Step 9: Apply ArgoCD application
 
 Suppose you are on root folder
 
@@ -162,9 +157,9 @@ Suppose you are on root folder
 kubectl apply -f ./deployment/argocd/ -n argocd
 ```
 
-## Step 11: Attach Ingress controller load balancer's DNS to Route53 A alias record
+## Step 10: Attach Ingress controller load balancer's DNS to Route53 A alias record
 
-## Step 12: Create Github Webhook for ArgoCD application that allow ArgoCD immediately apply a manifest file as soon as it changed.
+## Step 11: Create Github Webhook for ArgoCD application that allow ArgoCD immediately apply a manifest file as soon as it changed.
 
 [How to setup Github Webhook to ArgoCD application Docs](https://argo-cd.readthedocs.io/en/stable/operator-manual/webhook/)
 
