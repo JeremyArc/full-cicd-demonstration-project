@@ -141,7 +141,7 @@ Or you can forward port and access it via localhost:8080
 kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
-## Step 8: Login to ArgoCD UI using load balancer's DNS
+## Step 8: Login to ArgoCD UI using load balancer's DNS or localhost
 
 - user: `admin`
 - password: use this command to get default admin's password `argocd admin initial-password -n argocd`
