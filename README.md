@@ -32,7 +32,7 @@ This repository sets up the following architecture:
 - [Trivy](https://github.com/aquasecurity/trivy-action): For scan software vulnerability.
 - [git-auto-commit-action](https://github.com/stefanzweifel/git-auto-commit-action): For github bot commit changes after update the image in manifest file after push image to ECR.
 - Kubernetes (EKS): For deploying and managing containerized applications.
-- Helm: For managing Kubernetes applications.
+- Helm: For install nginx ingress controller.
 - AWS EKS: Managed Kubernetes service on AWS.
 - AWS ECR: Store Docker images.
 - ArgoCD: For GitOps on EKS cluster.
