@@ -163,6 +163,10 @@ kubectl apply -f ./deployment/argocd/ -n argocd
 
 [How to setup Github Webhook to ArgoCD application Docs](https://argo-cd.readthedocs.io/en/stable/operator-manual/webhook/)
 
+## Step 12: Set the contents-permission of the default GITHUB_TOKEN to true. (Required to push new commits to the repository)
+![Uploading image.png…]()
+
+
 # Clear resources
 
 If you need to remove all the resource, use this command 
