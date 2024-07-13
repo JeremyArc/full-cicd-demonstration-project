@@ -206,6 +206,8 @@ spec:
 
 - type `:wq` to save and  it will automatically update ingress service according to the file changes.
 
+Note: " SSL passthrough enables Kubernetes Ingress controllers to forward encrypted HTTPS traffic directly to backend services without decrypting it, ensuring that end-to-end encryption is maintained and supporting multiple protocols efficiently."
+
 ## Step 3: Apply ArgoCD application
 
 ```bash
