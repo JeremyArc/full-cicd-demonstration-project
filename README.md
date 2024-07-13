@@ -177,3 +177,37 @@ If you need to remove all the resource, use this command
 ```bash
 eksctl delete cluster --name dummy-cluster --region ap-southeast-1
 ```
+
+# Optional: expose ArgoCD server using nginx ingress controller
+
+### ref: https://argo-cd.readthedocs.io/en/stable/operator-manual/ingress/
+
+## Step 1: add `ingress.yaml` file (example is located on "/deployment/argocd/argocd-with-ingress")
+
+## Step 2: add `--enable-ssl-passthrough` flag to `nginx ingress controller service`
+
+- edit service configuration using this command
+
+```bash
+kubectl edit deployment ingress-nginx-controller -n kube-system
+```
+
+- add the mentioned flag under 
+```bash
+spec:
+      containers:
+      - args:
+        - /nginx-ingress-controller
+        .
+        .
+        .
+        - --enable-ssl-passthrough
+```
+
+- type `:wq` to save and  it will automatically update ingress service according to the file changes.
+
+## Step 3: Apply ArgoCD application
+
+```bash
+kubectl apply -f ./deployment/argocd/argocd-with-ingress -n argocd
+```
